@@ -70,9 +70,8 @@
 
 				<h:outputLabel value="#{msgs.cadTurnoHrasPrompt}"
 					styleClass="etiquetas" />
-				<h:selectOneMenu styleClass="input"
-					value="#{viewEquipamento.equipamento.turnoDeTrabalho}"
-					disabled="true">
+				<h:selectOneMenu styleClass="input2"
+					value="#{viewEquipamento.equipamento.turnoDeTrabalho}">
 					<f:selectItem itemLabel="Selecione" itemValue="0" />
 					<f:selectItem itemValue="1" itemLabel="Um de 8 horas" />
 					<f:selectItem itemValue="2" itemLabel="Dois de 8 horas" />
@@ -87,23 +86,24 @@
 				<h:outputLabel value="#{msgs.cadDataVendaPrompt}"
 					styleClass="etiquetas" />
 				<h:inputText value="#{viewEquipamento.equipamento.dataDeVenda}"
-					styleClass="input">
+					styleClass="input2">
 					<f:convertDateTime />
 				</h:inputText>
 
 				<h:outputLabel value="#{msgs.cadValorVendaPrompt}"
 					styleClass="etiquetas" />
 				<h:inputText value="#{viewEquipamento.equipamento.valorDeVenda}"
-					styleClass="input" />
+					styleClass="input2" />
 
 				<h:outputLabel value="#{msgs.cadValorResidualPrompt}"
 					styleClass="etiquetas" />
 				<h:inputText value="#{viewEquipamento.equipamento.valorResidual}"
-					styleClass="input" />
+					styleClass="input2" />
 
 			</h:panelGrid>
 
-			<h:commandButton value="Calcular" styleClass="buttonCadaEquipa" action="#{viewEquipamento.actionCalcular}"/>
+			<h:commandButton value="Calcular" styleClass="buttonCadaEquipa"
+				action="#{viewEquipamento.actionCalcular}" />
 		</h:form>
 
 	</div>

@@ -17,17 +17,18 @@ public class Equipamento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
-	private Integer referencia;
+	private int referencia;
 	private String produto;
 	private Date dataDeCompra;
 	private Date dataDeVenda;
 	private double valorDeCompra;
 	private double valorDeVenda;
-	private Integer turnoDeTrabalho;
+	private int turnoDeTrabalho;
 	private String estadoDoProduto;
-	private Integer depreciacao;
+	private int depreciacao;
 	private Double valorResidual = null;
 	private Categoria categoria = new Categoria();
+	private String msg;
 	
 	public Long getId() {
 		return id;
@@ -102,5 +103,11 @@ public class Equipamento implements Serializable {
 	}
 	public void setValorResidual(Double valorResidual) {
 		this.valorResidual = valorResidual;
+	}
+	public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
 	}
 }

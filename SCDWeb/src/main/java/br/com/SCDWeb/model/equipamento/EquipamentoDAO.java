@@ -34,8 +34,8 @@ public class EquipamentoDAO extends ConnectionFactory {
 			ps.setString(2, equipamento.getProduto());
 			ps.setDate(3, new Date(equipamento.getDataDeCompra().getTime()));
 			if (equipamento.getDataDeVenda() != null) {
-				java.sql.Date d = new java.sql.Date(equipamento.getDataDeVenda().getTime());
-				ps.setDate(4, d);
+				java.sql.Date dtV = new java.sql.Date(equipamento.getDataDeVenda().getTime());
+				ps.setDate(4, dtV);
 			} else {
 				ps.setNull(4, Types.DATE);
 			}
@@ -114,12 +114,13 @@ public class EquipamentoDAO extends ConnectionFactory {
 			con = openConnection();
 			ps = con.prepareStatement(sql);
 			ps.setString(1, equipamento.getProduto());
-			ps.setDate(2, new Date(equipamento.getDataDeCompra().getTime()));
-			ps.setDate(3, new Date(equipamento.getDataDeCompra().getTime()));
-			if (equipamento.getDataDeVenda() != null) {
-				java.sql.Date d = new java.sql.Date(equipamento.getDataDeVenda().getTime());
-				ps.setDate(3, d);
+			if (equipamento.getDataDeCompra() != null && equipamento.getDataDeVenda() != null) {
+				java.sql.Date dtC = new java.sql.Date(equipamento.getDataDeCompra().getTime());
+				ps.setDate(2, dtC);
+				java.sql.Date dtV = new java.sql.Date(equipamento.getDataDeVenda().getTime());
+				ps.setDate(3, dtV);
 			} else {
+				ps.setNull(2, Types.DATE);
 				ps.setNull(3, Types.DATE);
 			}
 			ps.setDouble(4, equipamento.getValorDeCompra());

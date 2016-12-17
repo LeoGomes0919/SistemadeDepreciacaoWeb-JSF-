@@ -38,7 +38,9 @@ public class DepreciacaoRN {
 		// se turno = 1 multiplica-se a taxa por 1
 		// = 2 1.5
 		// = 3 2.0
-		if (equipamento.getTurnoDeTrabalho() == 1)
+		if (equipamento.getTurnoDeTrabalho() == 0){
+			turno = null;
+		}else if (equipamento.getTurnoDeTrabalho() == 1)
 			turno = 1.0;
 		else if (equipamento.getTurnoDeTrabalho() == 2)
 			turno = 1.5;
