@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>#{msgs.layoutWindowTitle}</title>
+	<h:outputStylesheet library="css" name="styles.css" />
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+</h:head>
+
+<h:body>
+	<div class="content" align="center">
+		<h2>
+			<h:outputLabel value="#{msgs.indexPageTitle}" />
+		</h2>
+		<div align="center" id="login">
+			<h:form>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="#{msgs.indexUsuarioPrompt}" />
+					<h:inputText value="#{viewUsuario.usuarioEntrada}"
+						styleClass="input" required="true" id="usuario"
+						label="Nome de usuário" />
+					<h:outputLabel value="#{msgs.indexSenhaPrompt}" />
+					<h:inputSecret value="#{viewUsuario.senhaEntrada}"
+						styleClass="input" required="true" id="senha" label="Senha" />
+				</h:panelGrid>
+				<h:commandButton value="#{msgs.indexBontaoPrompt}"
+					styleClass="buttonLogin" action="#{viewUsuario.actionLogar}" />
+				<br />
+				<h:messages id="msgErro" styleClass="msgErro" />
+			</h:form>
+		</div>
+	</div>
+	<div class="footer" align="center">
+		<ui:insert name="header">
+			<ui:include src="/template/common/commonFooter.xhtml" />
+		</ui:insert>
+	</div>
+</h:body>
+
+</html>
